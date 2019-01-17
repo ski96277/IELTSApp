@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">IELTSApp</string>
+    //Login Page
+    <string name="loginText">LOGIN</string>
+    <string name="usernameHint">Username</string>
+    <string name="passwordHint">Password</string>
+    <string name="remember_me_CheckBox_Text">Remember Me</string>
+    <string name="forgot_password_Text">Forgot Password?</string>
+    <string name="sign_in_button_Text">SIGN IN</string>
+    <string name="or_login_with">Or Login with</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    //Sign Up
+
+    <string name="signupText">SIGN UP</string>
+    <string name="fullNameHint">Full Name</string>
+</resources>

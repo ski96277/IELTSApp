@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/question_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="5sp"
+        android:text="1.Who is the founder of Haryanka Dynasty?"
+        android:textColor="#000"
+        android:textSize="35sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_Group_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="5sp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajatshatru"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harshvardhan"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="poll-radio-2419"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ghananand"
+            android:textSize="25sp" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="105dp"
+            android:layout_height="80sp"
+            android:layout_margin="30sp"
+            android:layout_weight="1"
+            android:background="@drawable/border_shap"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+
+        <ImageView
+            android:id="@+id/button_forward"
+            android:layout_width="105dp"
+            android:layout_height="80sp"
+            android:layout_margin="30sp"
+            android:layout_weight="1"
+            android:background="@drawable/border_shap"
+            android:src="@drawable/ic_arrow_forward_black_24dp" />
+    </LinearLayout>
+</LinearLayout>
