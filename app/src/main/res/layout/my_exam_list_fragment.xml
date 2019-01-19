@@ -3,8 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_ID_for_Speaking"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:text="My Exam List"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="25sp"/>
+
 </LinearLayout>

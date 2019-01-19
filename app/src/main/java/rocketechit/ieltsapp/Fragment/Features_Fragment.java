@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rocketechit.ieltsapp.Activity.MainActivity;
 import rocketechit.ieltsapp.AdapterClass.FeatureAdapter;
 import rocketechit.ieltsapp.R;
 
@@ -25,6 +26,7 @@ public class Features_Fragment extends Fragment {
     RecyclerView recyclerViewID;
 
     Fragment fragment = null;
+    String title = "Exam Category";
 
     int[] images = {R.drawable.reading, R.drawable.writting, R.drawable.listening,
             R.drawable.speaking};
@@ -33,7 +35,9 @@ public class Features_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+        // Set title bar
+        ((MainActivity) getActivity())
+                .setToolbarTitle(title);
         View view = inflater.inflate(R.layout.features_fragment, null);
         ButterKnife.bind(this, view);
 

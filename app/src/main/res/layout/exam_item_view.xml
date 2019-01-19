@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,11 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="15dp"
         android:background="@color/colorPrimary"
-        android:elevation="10dp">
+        android:elevation="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,56 +20,65 @@
 
             <TextView
                 android:id="@+id/exam_name"
-                android:layout_width="277dp"
-                android:layout_height="52dp"
+                android:layout_width="309dp"
+                android:layout_height="49dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="2dp"
-                android:layout_marginEnd="71dp"
-                android:layout_marginRight="71dp"
-                android:gravity="left|center_horizontal|center_vertical"
-                android:paddingLeft="20sp"
+                android:layout_marginEnd="41dp"
+                android:layout_marginRight="41dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10sp"
+                android:singleLine="true"
                 android:text="Exam - 1 "
                 android:textColor="#000"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/author_name"
+                android:layout_width="162dp"
+                android:layout_height="44dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:paddingRight="5sp"
+                android:gravity="right|center_horizontal|center_vertical"
+                android:text="Author:- "
+                android:textColor="#000"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/exam-status"
-                android:layout_width="275dp"
+                android:layout_width="173dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="64dp"
-                android:layout_marginEnd="73dp"
-                android:layout_marginRight="73dp"
+                android:layout_marginEnd="175dp"
+                android:layout_marginRight="175dp"
                 android:gravity="left|center_horizontal|center_vertical"
-                android:paddingLeft="20sp"
+                android:paddingLeft="10sp"
                 android:text="Free"
                 android:textColor="#991818"
                 android:textSize="25sp" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="80dp"
-                android:layout_height="60dp"
+            <Button
+                android:id="@+id/menu_icon_btn"
+                android:layout_width="30sp"
+                android:layout_height="29dp"
+                android:layout_alignTop="@+id/exam_name"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
-                tools:ignore="VectorDrawableCompat" />
-
-            <View
-                android:layout_width="80dp"
-                android:layout_height="2dp"
-                android:layout_below="@id/imageView3"
-                android:layout_alignEnd="@+id/imageView3"
-                android:layout_alignRight="@+id/imageView3"
-                android:layout_marginTop="-2dp"
-                android:background="@color/colorPrimary" />
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/menu_icon_for_list"
+                android:gravity="center" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

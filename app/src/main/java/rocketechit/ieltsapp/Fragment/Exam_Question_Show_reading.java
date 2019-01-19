@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rocketechit.ieltsapp.Activity.MainActivity;
 import rocketechit.ieltsapp.R;
 
 public class Exam_Question_Show_reading extends Fragment {
@@ -21,11 +22,15 @@ public class Exam_Question_Show_reading extends Fragment {
     TextView questionTV;
     @BindView(R.id.radio_Group_ID)
     RadioGroup radioGroupID;
+    String title="MCQ Question Details";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        getActivity().setTitle("MCQ Question Details");
+
+        // Set title bar
+        ((MainActivity) getActivity())
+                .setToolbarTitle(title);
         View view = inflater.inflate(R.layout.exam_question, null);
         ButterKnife.bind(this, view);
         return view;

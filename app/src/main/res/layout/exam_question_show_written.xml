@@ -5,46 +5,47 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/question_TV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="5sp"
-        android:text="1.Who is the founder of Haryanka Dynasty?"
+        android:gravity="center"
+        android:text="Write About Bangladesh.."
+        android:textAllCaps="false"
         android:textColor="#000"
-        android:textSize="35sp" />
+        android:textSize="20sp" />
 
-    <RadioGroup
-        android:id="@+id/radio_Group_ID"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="5sp">
+        android:text="Here...."
+        android:textColor="#0F0F0F"
+        android:textSize="25sp"
+        android:layout_margin="2dp"/>
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ajatshatru"
-            android:textSize="25sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="#000" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Harshvardhan"
-            android:textSize="25sp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="1dp"
+        android:gravity="left"
+        android:hint="What you know ?"
+        android:scrollbars="vertical" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="poll-radio-2419"
-            android:textSize="25sp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ghananand"
-            android:textSize="25sp" />
-    </RadioGroup>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="5sp"
+        android:background="@drawable/border_shap"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/exam_item_name_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:text="Exam item name"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/author_name_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="51dp"
+            android:padding="5sp"
+            android:text="Author :- Imran sk" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="107dp"
+            android:padding="5sp"
+            android:text="Details : "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/exam_details_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="142dp"
+            android:padding="5sp"
+            android:text="Details About Exam Details About ExamDetails About ExamDetails About Exam "
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/exam_price_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView7"
+            android:layout_alignLeft="@+id/textView7"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="196dp"
+            android:padding="5sp"
+            android:text="Price: "
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/buy_OR_Free_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:padding="5sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/border_shap"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="start exam "
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/add_cart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/buy_OR_Free_btn"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:background="@drawable/border_shap"
+            android:gravity="left|center"
+            android:text="  Add"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/ic_add_shopping_cart_black_24dp"
+            android:padding="5sp"
+            />
+    </RelativeLayout>
+</ScrollView>

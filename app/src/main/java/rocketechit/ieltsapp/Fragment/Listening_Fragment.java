@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,15 +14,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rocketechit.ieltsapp.AdapterClass.ExamAdapter;
+import rocketechit.ieltsapp.Activity.MainActivity;
+import rocketechit.ieltsapp.AdapterClass.ExamListAdapter;
 import rocketechit.ieltsapp.R;
 
 public class Listening_Fragment extends Fragment {
 
     Fragment fragment;
+    String title = "Listening Exam List";
 
-
-    String[] exam_name = {"Demo Exam-1", "Demo Exam-2", "Demo Exam-3", "Demo Exam-4", "Demo Exam-5"};
+    String[] exam_name = {"Listening Demo Exam-1", "Listening Demo Exam-2", "Listening Demo Exam-3",
+            "Listening Demo Exam-4", "Listening Demo Exam-5"};
+    String[] author_name = {"SRK", "SK", "SRK", "SK", "SRK"};
     String[] exam_status = {"Free", "$100", "Free", "$50", "Free",};
 
     @BindView(R.id.recycler_View_ID)
@@ -30,7 +34,9 @@ public class Listening_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       getActivity().setTitle("Listening Exam List");
+
+        ((MainActivity) getActivity()).setToolbarTitle(title);
+
         View view = inflater.inflate(R.layout.listening_fragment, null);
         ButterKnife.bind(this, view);
         return view;
@@ -44,25 +50,32 @@ public class Listening_Fragment extends Fragment {
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewID.setLayoutManager(linearLayoutManager);
 
-        ExamAdapter examAdapter = new ExamAdapter(getActivity(), exam_name, exam_status);
-        recyclerViewID.setAdapter(examAdapter);
+        ExamListAdapter examListAdapter = new ExamListAdapter(getActivity(), exam_name, exam_status, author_name);
+        recyclerViewID.setAdapter(examListAdapter);
 
-        examAdapter.setOnItemClickListener(new ExamAdapter.ClickListener() {
+        examListAdapter.setOnItemClickListener(new ExamListAdapter.ClickListener() {
             @Override
-            public void onItemClick(int position, String exam_status) {
-                String status = exam_status.toString();
-                if (status.equals("Free")) {
-                    fragment = new Exam_Question_Show_reading();
+            public void onItemClick(int position, View v, String exam_status, String exam_name, String author) {
 
-                } else {
-                    fragment = new Payment_Fragment();
-                }
+
+                Bundle bundle = new Bundle();
+                bundle.putString("exam_name", exam_name);
+                bundle.putString("exam_status", exam_status);
+                bundle.putString("exam_author", author);
+                bundle.putString("id","Listening");
+
+                fragment = new Exam_item_details();
+                fragment.setArguments(bundle);
+
                 if (fragment != null) {
                     FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.addToBackStack("");
+                    fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                     fragmentTransaction.replace(R.id.screen_Area, fragment);
                     fragmentTransaction.commit();
                 }
+
+
             }
 
             @Override
@@ -70,6 +83,7 @@ public class Listening_Fragment extends Fragment {
 
             }
         });
+
 
     }
 }

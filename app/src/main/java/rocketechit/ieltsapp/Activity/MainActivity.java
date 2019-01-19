@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import butterknife.ButterKnife;
 import rocketechit.ieltsapp.Fragment.Features_Fragment;
+import rocketechit.ieltsapp.Fragment.My_ExamList_Fragment;
 import rocketechit.ieltsapp.R;
 
 import android.view.Menu;
@@ -27,14 +28,17 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Fragment fragment = null;
+    String title = "Exam Category";
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Exam Category");
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setTitle();
+        setToolbarTitle(title);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -62,6 +66,10 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }
 
+    }
+
+    public void setToolbarTitle(String title) {
+        toolbar.setTitle(title);
     }
 
     @Override
@@ -99,11 +107,14 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_My_Exam) {
             // Handle the camera action
+            fragment = new My_ExamList_Fragment();
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -114,6 +125,13 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        }
+        if (fragment != null) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.screen_Area, fragment);
+            fragmentTransaction.addToBackStack("");
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

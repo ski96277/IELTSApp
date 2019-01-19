@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/play_button"
+        android:layout_width="47dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="53dp"
+        app:srcCompat="@drawable/play_audio" />
+
+    <Button
+        android:id="@+id/audio_progress"
+        android:layout_width="192dp"
+        android:layout_height="37dp"
+        android:layout_alignTop="@+id/play_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp" />
+
+    <ImageView
+        android:id="@+id/headphone_icon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignBottom="@+id/audio_progress"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        app:srcCompat="@drawable/headphones" />
+
+    <ImageButton
+        android:id="@+id/voice_record"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_below="@id/headphone_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/border_shap"
+        android:src="@drawable/ic_keyboard_voice_black_24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/voice_record"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/button_back"
+                android:layout_width="105dp"
+                android:layout_height="50sp"
+                android:layout_margin="30sp"
+                android:background="@drawable/border_shap"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+
+            <ImageView
+                android:id="@+id/button_forward"
+                android:layout_width="105dp"
+                android:layout_height="50sp"
+                android:layout_margin="30sp"
+                android:layout_weight="1"
+                android:background="@drawable/border_shap"
+                android:src="@drawable/ic_arrow_forward_black_24dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
