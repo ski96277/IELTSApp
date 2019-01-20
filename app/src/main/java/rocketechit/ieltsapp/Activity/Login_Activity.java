@@ -1,8 +1,12 @@
 package rocketechit.ieltsapp.Activity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,7 +41,8 @@ public class Login_Activity extends AppCompatActivity {
             case R.id.forgot_password_btn:
                 break;
             case R.id.button_signin:
-                startActivity(new Intent(Login_Activity.this,MainActivity.class));
+//                startActivity(new Intent(Login_Activity.this,MainActivity.class));
+                custom_Alert_dialog_For_TEST();
                 break;
             case R.id.facebook_icon_btn:
                 Toast.makeText(this, "Facebook", Toast.LENGTH_SHORT).show();
@@ -50,4 +55,42 @@ public class Login_Activity extends AppCompatActivity {
                 break;
         }
     }
+
+    private void custom_Alert_dialog_For_TEST() {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater layoutInflater = this.getLayoutInflater();
+
+        View view = layoutInflater.inflate(R.layout.custom_alert_dailog, null);
+        builder.setView(view);
+
+        final AlertDialog alertDialog = builder.create();
+
+        Button master_btn1 = view.findViewById(R.id.master_btn);
+        Button tutor_btn1 = view.findViewById(R.id.tutor_btn);
+        Button student_btn1 = view.findViewById(R.id.student_btn);
+
+        master_btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Login_Activity.this, "master Admin", Toast.LENGTH_SHORT).show();
+            }
+        });
+        tutor_btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login_Activity.this, Tutor_Activity.class));
+            }
+        });
+        student_btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login_Activity.this, MainActivity.class));
+            }
+        });
+
+        alertDialog.show();
+    }
+
 }

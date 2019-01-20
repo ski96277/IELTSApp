@@ -25,7 +25,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activity.Free_Exam_Activity"
-            android:parentActivityName=".Activity.MainActivity"></activity>
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.Tutor_Activity"
+            android:label="@string/title_activity_tutor_"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

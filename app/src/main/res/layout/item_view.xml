@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="220sp"
+        android:layout_height="230sp"
         android:layout_margin="10dp"
         app:cardElevation="10dp">
 
@@ -28,11 +28,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/image_item"
                 android:gravity="center"
-                android:text="MCQ Exam"
+                android:text="MCQ Exam MCQ Exam MCQ ExamExam MCQ Exam"
                 android:background="@color/colorPrimary"
                 android:textColor="#FFF"
                 android:padding="5dp"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
         </RelativeLayout>
 

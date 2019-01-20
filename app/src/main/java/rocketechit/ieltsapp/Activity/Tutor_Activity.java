@@ -1,6 +1,5 @@
 package rocketechit.ieltsapp.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,38 +15,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import butterknife.ButterKnife;
-import rocketechit.ieltsapp.Fragment.Features_Fragment;
-import rocketechit.ieltsapp.Fragment.My_ExamList_Fragment;
+import rocketechit.ieltsapp.Fragment.Pending_Result;
+import rocketechit.ieltsapp.Fragment.Tutor_Home_page;
 import rocketechit.ieltsapp.R;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity
+public class Tutor_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     Fragment fragment = null;
-    String title = "Exam Category";
     Toolbar toolbar;
+    String title = "Add Question";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_tutor);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        setToolbarTitle(title);
         setSupportActionBar(toolbar);
+        setToolbarTitle(title);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(new Intent(MainActivity.this, Free_Exam_Activity.class)));
+
             }
         });
+        fragment = new Tutor_Home_page();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+        fragmentTransaction.replace(R.id.screen_Area_Tutor, fragment);
+        fragmentTransaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -57,19 +57,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        //default Fragment Load
-        fragment = new Features_Fragment();
-        if (fragment != null) {
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.screen_Area, fragment);
-            fragmentTransaction.commit();
-        }
-
-    }
-
-    public void setToolbarTitle(String title) {
-        toolbar.setTitle(title);
     }
 
     @Override
@@ -85,7 +72,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.tutor_, menu);
         return true;
     }
 
@@ -107,14 +94,11 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_My_Exam) {
+        if (id == R.id.nav_camera) {
             // Handle the camera action
-            fragment = new My_ExamList_Fragment();
-
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -126,16 +110,15 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
-        if (fragment != null) {
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-            fragmentTransaction.replace(R.id.screen_Area, fragment);
-            fragmentTransaction.addToBackStack("");
-            fragmentTransaction.commit();
-        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    //set title bar
+    public void setToolbarTitle(String title) {
+        toolbar.setTitle(title);
     }
 }
