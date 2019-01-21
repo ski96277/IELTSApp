@@ -23,6 +23,7 @@ public class Tutor_Home_page extends Fragment {
     RecyclerView recyclerViewIDTutor;
     Fragment fragment=null;
     String title="Add Exam";
+    Bundle bundle;
 
     int[] images = {R.drawable.reading, R.drawable.writting, R.drawable.listening,
             R.drawable.speaking};
@@ -34,7 +35,7 @@ public class Tutor_Home_page extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         ((Tutor_Activity)getActivity()).setToolbarTitle(title);
-
+bundle=new Bundle();
         View view = inflater.inflate(R.layout.tutor_home_page, null);
         ButterKnife.bind(this, view);
         return view;
@@ -55,22 +56,30 @@ public class Tutor_Home_page extends Fragment {
             public void onItemClick(int position, View v) {
 
                 if (position == 0) {
-                    fragment = new Add_MCQ_Question();
+                    fragment = new Make_A_Form_For_Post_Question();
+                    bundle.putString("value","reading");
                 }
                 if (position == 1) {
 
-                    fragment = new Add_Written_Question();
+                    fragment = new Make_A_Form_For_Post_Question();
+                    bundle.putString("value","writing");
+
                 }
                 if (position == 2) {
 
-                    fragment = new Add_Listening_Question();
+                    fragment = new Make_A_Form_For_Post_Question();
+                    bundle.putString("value","listening");
+
                 }
                 if (position == 3) {
 
-                    fragment = new Add_Speaking_Question();
+                    fragment = new Make_A_Form_For_Post_Question();
+
+                    bundle.putString("value","speaking");
                 }
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.addToBackStack("");
+                fragment.setArguments(bundle);
                 fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                 fragmentTransaction.replace(R.id.screen_Area_Tutor, fragment);
                 fragmentTransaction.commit();

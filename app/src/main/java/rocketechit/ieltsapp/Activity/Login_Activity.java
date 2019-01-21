@@ -48,7 +48,7 @@ public class Login_Activity extends AppCompatActivity {
                 Toast.makeText(this, "Facebook", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.google_icon_btn:
-                Toast.makeText(this, "Facebook", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Google", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.signup_btn:
                 startActivity(new Intent(Login_Activity.this, SignUp_Activity.class));
@@ -74,7 +74,7 @@ public class Login_Activity extends AppCompatActivity {
         master_btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Login_Activity.this, "master Admin", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Login_Activity.this, Admin_Activity.class));
             }
         });
         tutor_btn1.setOnClickListener(new View.OnClickListener() {

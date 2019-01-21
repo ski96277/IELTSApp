@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+   <!-- <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="5dp"
@@ -13,7 +13,11 @@
         android:layout_marginRight="5dp"
         android:background="@color/colorPrimary"
         android:elevation="5dp">
-
+-->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -22,9 +26,6 @@
                 android:id="@+id/exam_name"
                 android:layout_width="309dp"
                 android:layout_height="49dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="41dp"
                 android:layout_marginRight="41dp"
@@ -55,9 +56,6 @@
                 android:id="@+id/exam-status"
                 android:layout_width="173dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_marginTop="64dp"
                 android:layout_marginEnd="175dp"
                 android:layout_marginRight="175dp"

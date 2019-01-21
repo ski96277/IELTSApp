@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,10 @@ public class My_ExamList_Fragment extends Fragment {
     @BindView(R.id.screen_Area_my_exam_list)
     FrameLayout screenAreaMyExamList;
     Fragment fragment = null;
+    @BindView(R.id.pending_btn)
+    Button pendingBtn;
+    @BindView(R.id.result_btn)
+    Button resultBtn;
 
     @Nullable
     @Override
@@ -33,15 +38,16 @@ public class My_ExamList_Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        fragment=new Pending_Result();
+        fragment = new Pending_Result();
         if (fragment != null) {
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.addToBackStack("");
             fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
             fragmentTransaction.replace(R.id.screen_Area_my_exam_list, fragment);
             fragmentTransaction.commit();
         }
+
     }
+
     @OnClick({R.id.pending_btn, R.id.result_btn})
     public void onViewClicked(View view) {
         switch (view.getId()) {

@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             fragment = new My_ExamList_Fragment();
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_my_question) {
 
         } else if (id == R.id.nav_slideshow) {
 

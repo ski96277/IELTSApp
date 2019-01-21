@@ -3,6 +3,7 @@ package rocketechit.ieltsapp.Activity;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
@@ -15,40 +16,41 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import rocketechit.ieltsapp.Fragment.Exam_List_Tutor;
-import rocketechit.ieltsapp.Fragment.Tutor_Home_page;
-import rocketechit.ieltsapp.Fragment.Tutor_question_List;
+import rocketechit.ieltsapp.Fragment.Admin_Home_Page;
 import rocketechit.ieltsapp.R;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Tutor_Activity extends AppCompatActivity
+public class Admin_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
     Fragment fragment = null;
+
+    String title = "Home";
     Toolbar toolbar;
-    String title = "Add Question";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutor);
+        setContentView(R.layout.activity_admin);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setToolbarTitle(title);
+        settoolbarTitle(title);
         setSupportActionBar(toolbar);
+        fragment = new Admin_Home_Page();
+        if (fragment != null) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+            fragmentTransaction.replace(R.id.screen_Area_Admin, fragment);
+            fragmentTransaction.commit();
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
             }
         });
-        fragment = new Tutor_Home_page();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-        fragmentTransaction.replace(R.id.screen_Area_Tutor, fragment);
-        fragmentTransaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -59,6 +61,8 @@ public class Tutor_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -73,7 +77,7 @@ public class Tutor_Activity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.tutor_, menu);
+        getMenuInflater().inflate(R.menu.admin_, menu);
         return true;
     }
 
@@ -98,13 +102,9 @@ public class Tutor_Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nva_exam_list) {
+        if (id == R.id.nav_camera) {
             // Handle the camera action
-            fragment = new Exam_List_Tutor();
-
-        } else if (id == R.id.nav_my_question) {
-
-            fragment = new Tutor_question_List();
+        } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -115,20 +115,13 @@ public class Tutor_Activity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.addToBackStack("");
-        fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-        fragmentTransaction.replace(R.id.screen_Area_Tutor, fragment);
-        fragmentTransaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-
-    //set title bar
-    public void setToolbarTitle(String title) {
+    private void settoolbarTitle(String title) {
         toolbar.setTitle(title);
     }
 }
