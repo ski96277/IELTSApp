@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import rocketechit.ieltsapp.Fragment.Add_Tutor;
 import rocketechit.ieltsapp.Fragment.Admin_Home_Page;
 import rocketechit.ieltsapp.R;
 
@@ -25,6 +26,7 @@ import android.view.MenuItem;
 public class Admin_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    FloatingActionButton fab;
     Fragment fragment = null;
 
     String title = "Home";
@@ -38,6 +40,26 @@ public class Admin_Activity extends AppCompatActivity
         settoolbarTitle(title);
         setSupportActionBar(toolbar);
         fragment = new Admin_Home_Page();
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.show();
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                fragment = new Add_Tutor();
+
+                if (fragment != null) {
+                    fab.hide();
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+                 /*   fragmentTransaction.addToBackStack("");*/
+                    fragmentTransaction.replace(R.id.screen_Area_Admin, fragment);
+                    fragmentTransaction.commit();
+                }
+
+            }
+        });
+
         if (fragment != null) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -45,12 +67,6 @@ public class Admin_Activity extends AppCompatActivity
             fragmentTransaction.commit();
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,7 +77,6 @@ public class Admin_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-
 
 
     @Override
@@ -121,7 +136,7 @@ public class Admin_Activity extends AppCompatActivity
         return true;
     }
 
-    private void settoolbarTitle(String title) {
+    public void settoolbarTitle(String title) {
         toolbar.setTitle(title);
     }
 }
