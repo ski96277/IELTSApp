@@ -38,6 +38,7 @@ public class Tutor_Activity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.hide();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,13 +103,13 @@ public class Tutor_Activity extends AppCompatActivity
             // Handle the camera action
             fragment = new Exam_List_Tutor();
 
-        } else if (id == R.id.nav_my_question) {
+        } else if (id == R.id.nav_my_profile) {
 
             fragment = new Tutor_question_List();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_Tutor_Request) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_Speaking) {
 
         } else if (id == R.id.nav_share) {
 

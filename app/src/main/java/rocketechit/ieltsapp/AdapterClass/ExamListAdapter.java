@@ -49,7 +49,7 @@ public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ViewCl
     public void onBindViewHolder(@NonNull ExamListAdapter.ViewClass viewClass, int i) {
         viewClass.exam_name.setText(name[i]);
         viewClass.exam_status.setText(exam_status[i]);
-        viewClass.author.append(author[i]);
+//        viewClass.author.append(author[i]);
     }
 
     @Override
@@ -74,7 +74,7 @@ public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ViewCl
 
             exam_name = itemView.findViewById(R.id.exam_name);
             exam_status = itemView.findViewById(R.id.exam_status);
-            author = itemView.findViewById(R.id.author_name);
+//            author = itemView.findViewById(R.id.author_name);
             menu_icon = itemView.findViewById(R.id.menu_icon_btn);
         }
 
@@ -82,7 +82,7 @@ public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ViewCl
         @Override
         public void onClick(View v) {
             clickListener.onItemClick(getAdapterPosition(), v, exam_status.getText().toString(),
-                    exam_name.getText().toString(), author.getText().toString());
+                    exam_name.getText().toString(), "author");
         }
 
         @Override

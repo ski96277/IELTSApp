@@ -46,6 +46,47 @@
                     android:layout_marginRight="-3dp"
                     android:text="$150"
                     android:textColor="#cc0606" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="279dp"
+                    android:padding="4dp"
+                    android:text="Shaikh Imran Hossain"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="337dp"
+                    android:padding="4dp"
+                    android:text="Imran.bu96@gmail.com"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView12"
+                    android:layout_alignLeft="@+id/textView12"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="46dp"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginTop="392dp"
+                    android:padding="4dp"
+                    android:text="01687870058"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="50dp"
@@ -116,7 +157,7 @@
                     android:layout_marginTop="128dp"
                     android:background="@drawable/circle_background"
                     android:gravity="center"
-                    android:text="70%"
+                    android:text="50%"
                     android:textColor="#FFF"
                     android:textSize="15sp" />
 
@@ -144,7 +185,7 @@
                     android:layout_marginTop="127dp"
                     android:background="@drawable/circle_background"
                     android:gravity="center"
-                    android:text="100%"
+                    android:text="50%"
                     android:textColor="#FFF"
                     android:textSize="15sp" />
 
@@ -159,68 +200,6 @@
                     android:layout_toStartOf="@+id/textView11"
                     android:layout_toLeftOf="@+id/textView11"
                     android:text="listening" />
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="234dp"
-                    android:padding="4dp"
-                    android:text="Shaikh Imran Hossain"
-                    android:textColor="#000"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="292dp"
-                    android:padding="4dp"
-                    android:text="Imran.bu96@gmail.com"
-                    android:textColor="#000"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/textView12"
-                    android:layout_alignLeft="@+id/textView12"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="49dp"
-                    android:layout_marginLeft="49dp"
-                    android:layout_marginTop="347dp"
-                    android:padding="4dp"
-                    android:text="01687870058"
-                    android:textColor="#000"
-                    android:textSize="20sp" />
-
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textView13"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="44dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Block User" />
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/button3"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="-47dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:text="Make Tutor" />
 
 
             </RelativeLayout>

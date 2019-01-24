@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rocketechit.ieltsapp.Activity.Admin_Activity;
 import rocketechit.ieltsapp.AdapterClass.Total_Student_list_Adapter;
 import rocketechit.ieltsapp.R;
 
@@ -39,6 +41,9 @@ public class Total_Student_List extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         bundle=new Bundle();
+
+        //hide floating btn
+        ((Admin_Activity)getActivity()).hideFloatingActionButton();
 
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);

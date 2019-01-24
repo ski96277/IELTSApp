@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
    >
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"> <item
+        android:id="@+id/nav_my_profile"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="Profile" />
         <item
             android:id="@+id/nav_My_Exam"
             android:icon="@drawable/my_exam"
             android:title="My Exam" />
+
         <item
-            android:id="@+id/nav_my_question"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_Tutor_Request"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Slideshow" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_Speaking"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />
     </group>

@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+   >
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Home" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_Add_Question"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Add Question" />
+        <item
+            android:id="@+id/nav_Add_Tutor"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Add Tutor" />
+        <item
+            android:id="@+id/nav_Tutor_Request"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Tutor Request" />
+        <item
+            android:id="@+id/nav_Speaking"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Speaking" />
     </group>
 
     <item android:title="Communicate">

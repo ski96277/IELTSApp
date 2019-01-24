@@ -16,7 +16,7 @@
             <Button
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:text="Payment Due " />
+                android:text="payable " />
 
             <Button
                 android:layout_width="170dp"

@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import butterknife.ButterKnife;
 import rocketechit.ieltsapp.Fragment.Features_Fragment;
 import rocketechit.ieltsapp.Fragment.My_ExamList_Fragment;
+import rocketechit.ieltsapp.Fragment.Student_Profile_View;
 import rocketechit.ieltsapp.R;
 
 import android.view.Menu;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.hide();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,11 +117,14 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             fragment = new My_ExamList_Fragment();
 
-        } else if (id == R.id.nav_my_question) {
+        } else if (id == R.id.nav_my_profile) {
 
-        } else if (id == R.id.nav_slideshow) {
+           fragment=null;
+           fragment=new Student_Profile_View();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_Tutor_Request) {
+
+        } else if (id == R.id.nav_Speaking) {
 
         } else if (id == R.id.nav_share) {
 

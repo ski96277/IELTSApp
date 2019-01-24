@@ -59,23 +59,21 @@ public class Make_A_Form_For_Post_Question extends Fragment {
                 }
                 if (value_From.equals("listening")) {
                     fragment = new Add_Listening_Question();
-
                 }
                 if (value_From.equals("speaking")) {
                     fragment = new Add_Speaking_Question();
-
                 }
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.addToBackStack("");
-                fragmentTransaction.replace(R.id.screen_Area_Tutor, fragment);
+                fragmentTransaction.replace(R.id.screen_Area_Admin, fragment);
                 fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                 fragmentTransaction.commit();
                 break;
             case R.id.add_question_later:
-                fragment = new Tutor_Home_page();
+                fragment=null;
+                fragment = new Add_Question_For_Admin_Home_page();
                 FragmentTransaction fragmentTransaction2 = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction2.addToBackStack("");
-                fragmentTransaction2.replace(R.id.screen_Area_Tutor, fragment);
+                fragmentTransaction2.replace(R.id.screen_Area_Admin, fragment);
                 fragmentTransaction2.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                 fragmentTransaction2.commit();
 

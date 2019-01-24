@@ -13,16 +13,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rocketechit.ieltsapp.Activity.Tutor_Activity;
+import rocketechit.ieltsapp.Activity.Admin_Activity;
 import rocketechit.ieltsapp.AdapterClass.FeatureAdapter;
 import rocketechit.ieltsapp.R;
 
-public class Tutor_Home_page extends Fragment {
+public class Add_Question_For_Admin_Home_page extends Fragment {
 
     @BindView(R.id.recycler_view_ID_tutor)
     RecyclerView recyclerViewIDTutor;
     Fragment fragment=null;
-    String title="upload File";
+    String title="Add Exam";
     Bundle bundle;
 
     int[] images = {R.drawable.reading, R.drawable.writting, R.drawable.listening,
@@ -34,9 +34,9 @@ public class Tutor_Home_page extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        ((Tutor_Activity)getActivity()).setToolbarTitle(title);
+        ((Admin_Activity)getActivity()).settoolbarTitle(title);
 bundle=new Bundle();
-        View view = inflater.inflate(R.layout.tutor_home_page, null);
+        View view = inflater.inflate(R.layout.add_question_for_admin_home_page, null);
         ButterKnife.bind(this, view);
         return view;
     }
@@ -56,39 +56,32 @@ bundle=new Bundle();
             public void onItemClick(int position, View v) {
 
                 if (position == 0) {
-                   /* fragment = new Make_A_Form_For_Post_Question();
-                    bundle.putString("value","reading");*/
-                    fragment = new Upload_Document();
-
+                    fragment = new Make_A_Form_For_Post_Question();
+                    bundle.putString("value","reading");
                 }
                 if (position == 1) {
 
-              /*      fragment = new Make_A_Form_For_Post_Question();
-                    bundle.putString("value","writing");*/
-                    fragment = new Upload_Document();
-
+                    fragment = new Make_A_Form_For_Post_Question();
+                    bundle.putString("value","writing");
 
                 }
                 if (position == 2) {
 
-                    /*fragment = new Make_A_Form_For_Post_Question();
-                    bundle.putString("value","listening");*/
-                    fragment = new Upload_Document();
-
+                    fragment = new Make_A_Form_For_Post_Question();
+                    bundle.putString("value","listening");
 
                 }
                 if (position == 3) {
-/*
-                    fragment = new Make_A_Form_For_Post_Question();
-                    bundle.putString("value","speaking");*/
-                    fragment = new Upload_Document();
 
+                    fragment = new Make_A_Form_For_Post_Question();
+
+                    bundle.putString("value","speaking");
                 }
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.addToBackStack("");
                 fragment.setArguments(bundle);
                 fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-                fragmentTransaction.replace(R.id.screen_Area_Tutor, fragment);
+                fragmentTransaction.replace(R.id.screen_Area_Admin, fragment);
                 fragmentTransaction.commit();
 
             }

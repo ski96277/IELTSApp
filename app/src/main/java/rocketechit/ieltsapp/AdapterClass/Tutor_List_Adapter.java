@@ -25,6 +25,11 @@ public class Tutor_List_Adapter extends RecyclerView.Adapter<Tutor_List_Adapter.
         this.name = name;
 
     }
+    public Tutor_List_Adapter(Context context) {
+        this.context = context;
+        this.name = name;
+
+    }
 
 
     @NonNull
@@ -38,12 +43,12 @@ public class Tutor_List_Adapter extends RecyclerView.Adapter<Tutor_List_Adapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewClass viewClass, int i) {
-        viewClass.nameTV.setText(name[i]);
+//        viewClass.nameTV.setText(name[i]);
     }
 
     @Override
     public int getItemCount() {
-        return name.length;
+        return 10;
     }
 
     //implement interface for onClick from java class (third ....)
@@ -58,6 +63,7 @@ public class Tutor_List_Adapter extends RecyclerView.Adapter<Tutor_List_Adapter.
             itemView.setOnLongClickListener(this);
 
             nameTV = itemView.findViewById(R.id.teacher_name_TV);
+
         }
 
         //Override this method for onClick from java class (fourth ....)

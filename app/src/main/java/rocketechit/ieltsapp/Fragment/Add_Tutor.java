@@ -20,6 +20,8 @@ public class Add_Tutor extends Fragment {
 
         ((Admin_Activity)getActivity()).settoolbarTitle(title);
 
+        ((Admin_Activity)getActivity()).hideFloatingActionButton();
+
         View view = inflater.inflate(R.layout.add_tutor, null);
         ButterKnife.bind(this, view);
         return view;
@@ -30,4 +32,6 @@ public class Add_Tutor extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
     }
+
+
 }

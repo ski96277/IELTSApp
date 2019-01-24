@@ -39,5 +39,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha01'
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+//circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+
+
 
 }

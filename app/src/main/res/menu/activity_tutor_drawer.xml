@@ -9,15 +9,15 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Pending Exams" />
         <item
-            android:id="@+id/nav_my_question"
+            android:id="@+id/nav_my_profile"
             android:icon="@drawable/ic_menu_gallery"
             android:title="My Question" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_Tutor_Request"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Slideshow" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_Speaking"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />
     </group>

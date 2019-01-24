@@ -3,7 +3,6 @@ package rocketechit.ieltsapp.Activity;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
@@ -16,8 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import rocketechit.ieltsapp.Fragment.Add_Question_For_Admin_Home_page;
 import rocketechit.ieltsapp.Fragment.Add_Tutor;
 import rocketechit.ieltsapp.Fragment.Admin_Home_Page;
+import rocketechit.ieltsapp.Fragment.Tutor_question_Request;
 import rocketechit.ieltsapp.R;
 
 import android.view.Menu;
@@ -49,10 +50,9 @@ public class Admin_Activity extends AppCompatActivity
                 fragment = new Add_Tutor();
 
                 if (fragment != null) {
-                    fab.hide();
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-                 /*   fragmentTransaction.addToBackStack("");*/
+                    fragmentTransaction.addToBackStack("");
                     fragmentTransaction.replace(R.id.screen_Area_Admin, fragment);
                     fragmentTransaction.commit();
                 }
@@ -117,26 +117,63 @@ public class Admin_Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            fragment = null;
+            fragment = new Admin_Home_Page();
+        } else if (id == R.id.nav_Add_Question) {
+            // Handle the camera action
+            fragment = null;
+            fragment = new Add_Question_For_Admin_Home_page();
+        } else if (id == R.id.nav_Add_Tutor) {
 
-        } else if (id == R.id.nav_slideshow) {
+            fragment = null;
+            fragment = new Add_Tutor();
+        } else if (id == R.id.nav_Tutor_Request) {
 
-        } else if (id == R.id.nav_manage) {
+            fragment = null;
+            fragment = new Tutor_question_Request();
+
+        } else if (id == R.id.nav_Speaking) {
+
+            fragment = null;
+//            fragment = new Add_Speaking_Question();
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
-
+        if (fragment != null) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+            fragmentTransaction.addToBackStack("");
+            fragmentTransaction.replace(R.id.screen_Area_Admin, fragment);
+            fragmentTransaction.commit();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
+    //set title bar
     public void settoolbarTitle(String title) {
         toolbar.setTitle(title);
+    }
+
+    //Show fab icon
+    public void showFloatingActionButton() {
+        fab.show();
+    }
+
+    //Hide fab icon
+    public void hideFloatingActionButton() {
+        fab.hide();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        showFloatingActionButton();
     }
 }

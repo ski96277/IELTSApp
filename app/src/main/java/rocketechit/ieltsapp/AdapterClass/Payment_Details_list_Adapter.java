@@ -45,7 +45,7 @@ public class Payment_Details_list_Adapter extends RecyclerView.Adapter<Payment_D
     @Override
     public void onBindViewHolder(@NonNull Payment_Details_list_Adapter.ViewClass viewClass, int i) {
         viewClass.name_TV.setText(name[i]);
-        viewClass.dueTaka_TV.setText("Due :"+dueTaka[i]);
+        viewClass.dueTaka_TV.setText("payable :"+dueTaka[i]);
     }
 
     @Override

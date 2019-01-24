@@ -4,7 +4,7 @@
     >
     <item
         android:id="@+id/buy_now_menu"
-        android:title="Buy Now" />
+        android:title="Subscribe" />
     <item
         android:id="@+id/add_to_cart_menu"
         android:title="Add to List" />
