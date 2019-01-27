@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,8 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rocketechit.ieltsapp.Activity.MainActivity;
-import rocketechit.ieltsapp.AdapterClass.ExamListAdapter;
+import rocketechit.ieltsapp.AdapterClass.SpeakingExamListAdapter;
 import rocketechit.ieltsapp.R;
 
 public class Speaking_Fragment extends Fragment {
@@ -28,6 +30,12 @@ public class Speaking_Fragment extends Fragment {
     String title = "Speaking Exam";
     @BindView(R.id.recycler_view_ID_for_Speaking)
     RecyclerView recyclerViewIDForSpeaking;
+    @BindView(R.id.all_check)
+    CheckBox allCheck;
+    @BindView(R.id.free_check)
+    CheckBox freeCheck;
+    @BindView(R.id.paid_check)
+    CheckBox paidCheck;
 
 
     @Nullable
@@ -50,18 +58,17 @@ public class Speaking_Fragment extends Fragment {
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewIDForSpeaking.setLayoutManager(linearLayoutManager);
 
-        ExamListAdapter examListAdapter = new ExamListAdapter(getActivity(), exam_name, exam_status,author_name);
-        recyclerViewIDForSpeaking.setAdapter(examListAdapter);
+        SpeakingExamListAdapter speakingExamListAdapter = new SpeakingExamListAdapter(getActivity(), exam_name, exam_status, author_name);
+        recyclerViewIDForSpeaking.setAdapter(speakingExamListAdapter);
 
-        examListAdapter.setOnItemClickListener(new ExamListAdapter.ClickListener() {
+        speakingExamListAdapter.setOnItemClickListener(new SpeakingExamListAdapter.ClickListener() {
             @Override
-            public void onItemClick(int position, View v,String exam_status,String exam_name,String author) {
-
-                Bundle bundle=new Bundle();
-                bundle.putString("exam_name",exam_name);
-                bundle.putString("exam_status",exam_status);
-                bundle.putString("exam_author",author);
-                bundle.putString("id","speaking");
+            public void onItemClick(int position, View view, String exam_status, String exam_name, String author) {
+                Bundle bundle = new Bundle();
+                bundle.putString("exam_name", exam_name);
+                bundle.putString("exam_status", exam_status);
+                bundle.putString("exam_author", author);
+                bundle.putString("id", "speaking");
 
                 fragment = new Exam_item_details();
                 fragment.setArguments(bundle);
@@ -81,7 +88,27 @@ public class Speaking_Fragment extends Fragment {
 
             }
         });
-
     }
 
+    @OnClick({R.id.all_check, R.id.free_check, R.id.paid_check})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.all_check:
+
+                allCheck.setChecked(true);
+                freeCheck.setChecked(false);
+                paidCheck.setChecked(false);
+                break;
+            case R.id.free_check:
+                allCheck.setChecked(false);
+                freeCheck.setChecked(true);
+                paidCheck.setChecked(false);
+                break;
+            case R.id.paid_check:
+                allCheck.setChecked(false);
+                freeCheck.setChecked(false);
+                paidCheck.setChecked(true);
+                break;
+        }
+    }
 }

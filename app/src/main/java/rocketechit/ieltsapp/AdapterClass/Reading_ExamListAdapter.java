@@ -17,17 +17,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.ButterKnife;
 import rocketechit.ieltsapp.R;
 
-public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ViewClass> {
+public class Reading_ExamListAdapter extends RecyclerView.Adapter<Reading_ExamListAdapter.ViewClass> {
     Context context;
     String[] exam_status;
     String[] name;
     String[] author;
     //for onClick from java class (Second ....)
-    private static ExamListAdapter.ClickListener clickListener;
+    private static Reading_ExamListAdapter.ClickListener clickListener;
     private TextView examname;
     private TextView authorname;
 
-    public ExamListAdapter(Context context, String[] name, String[] exam_status, String[] author) {
+    public Reading_ExamListAdapter(Context context, String[] name, String[] exam_status, String[] author) {
         this.context = context;
         this.exam_status = exam_status;
         this.name = name;
@@ -38,15 +38,15 @@ public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ViewCl
 
     @NonNull
     @Override
-    public ExamListAdapter.ViewClass onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public Reading_ExamListAdapter.ViewClass onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.exam_item_view, null);
+        View view = layoutInflater.inflate(R.layout.reading_exam_item_view, null);
 
-        return new ExamListAdapter.ViewClass(view);
+        return new Reading_ExamListAdapter.ViewClass(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ExamListAdapter.ViewClass viewClass, int i) {
+    public void onBindViewHolder(@NonNull Reading_ExamListAdapter.ViewClass viewClass, int i) {
         viewClass.exam_name.setText(name[i]);
         viewClass.exam_status.setText(exam_status[i]);
 //        viewClass.author.append(author[i]);
@@ -123,8 +123,8 @@ public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ViewCl
     }
 
     //for onClick from java class
-    public void setOnItemClickListener(ExamListAdapter.ClickListener clickListener) {
-        ExamListAdapter.clickListener = clickListener;
+    public void setOnItemClickListener(Reading_ExamListAdapter.ClickListener clickListener) {
+        Reading_ExamListAdapter.clickListener = clickListener;
     }
 
     //for onClick from java class (First ....)

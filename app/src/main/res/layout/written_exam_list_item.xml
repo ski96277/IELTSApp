@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/exam_name"
+                android:layout_width="230dp"
+                android:layout_height="41dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="79dp"
+                android:layout_marginLeft="79dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="41dp"
+                android:layout_marginRight="41dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10sp"
+                android:singleLine="true"
+                android:text="Exam - 1 "
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/exam-status"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="85dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="175dp"
+                android:layout_marginRight="175dp"
+                android:gravity="left|center_horizontal|center_vertical"
+                android:paddingLeft="10sp"
+                android:text="Free"
+                android:textColor="#991818"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/menu_icon_btn"
+                android:layout_width="30sp"
+                android:layout_height="29dp"
+                android:layout_alignTop="@+id/exam_name"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/menu_icon_for_list"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="79dp"
+                android:layout_height="78dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:padding="4dp"
+                android:src="@drawable/written_exam_icon_list"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/exam-status"
+                android:layout_alignStart="@+id/exam-status"
+                android:layout_marginBottom="-64dp"
+                android:text="4"
+                android:layout_marginLeft="7dp"
+                android:textSize="15sp"
+                android:layout_alignLeft="@+id/exam-status" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:layout_below="@+id/menu_icon_btn"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="104dp"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/star_icon" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

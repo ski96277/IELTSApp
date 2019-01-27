@@ -22,6 +22,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight=".5"
+                    android:src="@drawable/tutor_list"
+                    android:textSize="25sp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:weightSum="2">
 
                 <ImageView
@@ -35,7 +59,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:hint="Tutor Name"
+                    android:hint="Name"
                     android:textSize="25sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -63,7 +87,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:hint="Degree Name"
+                    android:hint="Last Degree"
                     android:textSize="25sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -91,7 +115,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:hint="Tutor address"
+                    android:hint="address"
                     android:textSize="25sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -119,7 +143,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:hint="Tutor Name"
+                    android:hint="Number"
+                    android:inputType="numberDecimal"
                     android:textSize="25sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import butterknife.ButterKnife;
 import rocketechit.ieltsapp.Fragment.Features_Fragment;
 import rocketechit.ieltsapp.Fragment.My_ExamList_Fragment;
+import rocketechit.ieltsapp.Fragment.My_Purchase_Exam;
 import rocketechit.ieltsapp.Fragment.Student_Profile_View;
 import rocketechit.ieltsapp.R;
 
@@ -119,10 +120,12 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_my_profile) {
 
-           fragment=null;
-           fragment=new Student_Profile_View();
+            fragment = null;
+            fragment = new Student_Profile_View();
 
-        } else if (id == R.id.nav_Tutor_Request) {
+        } else if (id == R.id.nav_My_List) {
+            fragment = null;
+            fragment = new My_Purchase_Exam();
 
         } else if (id == R.id.nav_Speaking) {
 

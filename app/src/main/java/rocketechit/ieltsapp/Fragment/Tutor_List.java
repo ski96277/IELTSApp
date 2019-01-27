@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
@@ -22,15 +23,15 @@ public class Tutor_List extends Fragment {
     @BindView(R.id.recycler_View_ID_tutor_List)
     RecyclerView recyclerViewIDTutorList;
 
-    String title="Tutor List";
+    String title = "Tutor List";
 
-    String[] name={"Imran Sk","Anower Hossain","Rakin Bro","Adeib Bro","Imran Sk","Anower Hossain","Rakin Bro","Adeib Bro"};
+    String[] name = {"Imran Sk", "Anower Hossain", "Rakin Bro", "Adeib Bro", "Imran Sk", "Anower Hossain", "Rakin Bro", "Adeib Bro"};
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        ((Admin_Activity)getActivity()).settoolbarTitle(title);
+        ((Admin_Activity) getActivity()).settoolbarTitle(title);
 
         View view = inflater.inflate(R.layout.tutor_list, null);
         ButterKnife.bind(this, view);
@@ -41,17 +42,27 @@ public class Tutor_List extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewIDTutorList.setLayoutManager(linearLayoutManager);
 
-        Tutor_List_Adapter tutor_list_adapter=new Tutor_List_Adapter(getContext(),name);
+        Tutor_List_Adapter tutor_list_adapter = new Tutor_List_Adapter(getContext(), name);
         recyclerViewIDTutorList.setAdapter(tutor_list_adapter);
 
         tutor_list_adapter.setOnItemClickListener(new Tutor_List_Adapter.ClickListener() {
             @Override
             public void onItemClick(int position, View v) {
-                Toast.makeText(getContext(), "details", Toast.LENGTH_SHORT).show();
+                Bundle bundle = new Bundle();
+
+                Fragment fragment = new Tutor_Profile();
+                if (fragment != null) {
+                    FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+                    fragmentTransaction.addToBackStack("");
+                    fragmentTransaction.replace(R.id.screen_Area_Admin, fragment);
+                    fragmentTransaction.commit();
+                }
+
             }
 
             @Override

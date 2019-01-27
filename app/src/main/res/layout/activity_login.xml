@@ -224,7 +224,7 @@
                         android:layout_height="50dp"
                         android:background="@color/googleRed"
                         android:padding="10dp"
-                        android:src="@drawable/img_googleplus" />
+                        android:src="@drawable/gmail_icon" />
 
                 </LinearLayout>
 
@@ -235,8 +235,10 @@
                     android:layout_below="@+id/linearLayout2"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/googleRed"
                     android:layout_marginBottom="10dp"
-                    android:text="Dont have an account? Sign Up" />
+                    android:text="Don't have an account? Sign Up" />
 
             </RelativeLayout>
 

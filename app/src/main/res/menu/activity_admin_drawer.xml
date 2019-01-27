@@ -19,7 +19,7 @@
         <item
             android:id="@+id/nav_Tutor_Request"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Tutor Request" />
+            android:title="Question Request" />
         <item
             android:id="@+id/nav_Speaking"
             android:icon="@drawable/ic_menu_manage"

@@ -105,7 +105,6 @@
                     android:layout_marginRight="30dp">
 
 
-
                     <EditText
                         android:id="@+id/full_name_for_SignUp_ET"
                         android:layout_width="match_parent"
@@ -177,12 +176,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/relativeLayout4"
                     android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginRight="30dp"
                     android:background="@color/colorPrimary"
                     android:fontFamily="sans-serif-medium"
                     android:text="Sign Up"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="15dp"/>
+                    android:textColor="@color/white" />
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -204,7 +203,7 @@
                     android:layout_marginTop="10dp"
                     android:text="or sign up with"
                     android:textColor="@color/textColor"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout2"
@@ -218,9 +217,9 @@
                         android:id="@+id/facebook_icon_btn_for_SignUp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
                         android:background="@color/facebookBlue"
                         android:padding="10dp"
-                        android:layout_marginRight="10dp"
                         android:src="@drawable/img_facebook" />
 
                     <ImageView
@@ -240,6 +239,8 @@
                     android:layout_below="@+id/linearLayout2"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/googleRed"
                     android:layout_marginBottom="10dp"
                     android:text="have an account? Sign in" />
 

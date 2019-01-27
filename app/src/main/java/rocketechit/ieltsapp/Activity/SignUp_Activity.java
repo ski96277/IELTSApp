@@ -26,7 +26,7 @@ public class SignUp_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setTitle("Sign Up");
+        getSupportActionBar().setTitle("IELTS EXAM");
         setContentView(R.layout.activity_sign_up_);
         ButterKnife.bind(this);
     }
@@ -46,6 +46,7 @@ public class SignUp_Activity extends AppCompatActivity {
                 break;
             case R.id.signIn_btn:
                 startActivity(new Intent(SignUp_Activity.this,Login_Activity.class));
+                finish();
                 break;
         }
     }

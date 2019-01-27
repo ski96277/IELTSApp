@@ -13,9 +13,9 @@
             android:title="My Exam" />
 
         <item
-            android:id="@+id/nav_Tutor_Request"
+            android:id="@+id/nav_My_List"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="My List" />
         <item
             android:id="@+id/nav_Speaking"
             android:icon="@drawable/ic_menu_manage"

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,8 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rocketechit.ieltsapp.Activity.MainActivity;
-import rocketechit.ieltsapp.AdapterClass.ExamListAdapter;
+import rocketechit.ieltsapp.AdapterClass.WrittenExamListAdapter;
 import rocketechit.ieltsapp.R;
 
 public class Writing_Fragment extends Fragment {
@@ -29,6 +31,13 @@ public class Writing_Fragment extends Fragment {
     RecyclerView recyclerViewIdForWrittenExam;
 
     Fragment fragment;
+    @BindView(R.id.all_check)
+    CheckBox allCheck;
+    @BindView(R.id.free_check)
+    CheckBox freeCheck;
+    @BindView(R.id.paid_check)
+    CheckBox paidCheck;
+
 
     @Nullable
     @Override
@@ -49,18 +58,17 @@ public class Writing_Fragment extends Fragment {
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewIdForWrittenExam.setLayoutManager(linearLayoutManager);
 
-        ExamListAdapter examListAdapter = new ExamListAdapter(getActivity(), exam_name, exam_status,author_name);
-        recyclerViewIdForWrittenExam.setAdapter(examListAdapter);
+        WrittenExamListAdapter writtenExamListAdapter = new WrittenExamListAdapter(getActivity(), exam_name, exam_status, author_name);
+        recyclerViewIdForWrittenExam.setAdapter(writtenExamListAdapter);
 
-        examListAdapter.setOnItemClickListener(new ExamListAdapter.ClickListener() {
+        writtenExamListAdapter.setOnItemClickListener(new WrittenExamListAdapter.ClickListener() {
             @Override
-            public void onItemClick(int position, View v,String exam_status,String exam_name,String author) {
-
-                Bundle bundle=new Bundle();
-                bundle.putString("exam_name",exam_name);
-                bundle.putString("exam_status",exam_status);
-                bundle.putString("exam_author",author);
-                bundle.putString("id","writing");
+            public void onItemClick(int position, View view, String exam_status, String exam_name, String author) {
+                Bundle bundle = new Bundle();
+                bundle.putString("exam_name", exam_name);
+                bundle.putString("exam_status", exam_status);
+                bundle.putString("exam_author", author);
+                bundle.putString("id", "writing");
 
                 fragment = new Exam_item_details();
                 fragment.setArguments(bundle);
@@ -80,7 +88,28 @@ public class Writing_Fragment extends Fragment {
 
             }
         });
-
     }
 
+    @OnClick({R.id.all_check, R.id.free_check, R.id.paid_check})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.all_check:
+                allCheck.setChecked(true);
+                freeCheck.setChecked(false);
+                paidCheck.setChecked(false);
+                break;
+            case R.id.free_check:
+
+                allCheck.setChecked(false);
+                freeCheck.setChecked(true);
+                paidCheck.setChecked(false);
+                break;
+            case R.id.paid_check:
+
+                allCheck.setChecked(false);
+                freeCheck.setChecked(false);
+                paidCheck.setChecked(true);
+                break;
+        }
+    }
 }

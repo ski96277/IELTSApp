@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="13dp"
+                    android:src="@drawable/tutor_list"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignEnd="@+id/textView13"
+                    android:layout_alignRight="@+id/textView13"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="94dp"
+                    android:layout_marginEnd="-3dp"
+                    android:layout_marginRight="-3dp"
+                    android:text="$150"
+                    android:textColor="#cc0606" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="149dp"
+                    android:padding="4dp"
+                    android:text="Shaikh Imran Hossain"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="207dp"
+                    android:padding="4dp"
+                    android:text="Imran.bu96@gmail.com"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView12"
+                    android:layout_alignLeft="@+id/textView12"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginTop="262dp"
+                    android:padding="4dp"
+                    android:text="01687870058"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+<!--
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="127dp"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="80%"
+                    android:textSize="15sp"
+                    android:textColor="#FFF" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_toStartOf="@+id/textView11"
+                    android:layout_toLeftOf="@+id/textView11"
+                    android:text="Reading" />
+
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="101dp"
+                    android:layout_marginLeft="101dp"
+                    android:layout_marginTop="128dp"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="50%"
+                    android:textColor="#FFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="-77dp"
+                    android:layout_marginRight="-77dp"
+                    android:layout_toStartOf="@+id/textView11"
+                    android:layout_toLeftOf="@+id/textView11"
+                    android:text="Written" />
+
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="190dp"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="128dp"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="50%"
+                    android:textColor="#FFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="-170dp"
+                    android:layout_marginRight="-170dp"
+                    android:layout_toStartOf="@+id/textView11"
+                    android:layout_toLeftOf="@+id/textView11"
+                    android:text="listening" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="279dp"
+                    android:layout_marginLeft="279dp"
+                    android:layout_marginTop="127dp"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="50%"
+                    android:textColor="#FFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView15"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="-260dp"
+                    android:layout_marginRight="-260dp"
+                    android:layout_toStartOf="@+id/textView11"
+                    android:layout_toLeftOf="@+id/textView11"
+                    android:text="listening" />-->
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

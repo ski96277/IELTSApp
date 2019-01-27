@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,8 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rocketechit.ieltsapp.Activity.MainActivity;
-import rocketechit.ieltsapp.AdapterClass.ExamListAdapter;
+import rocketechit.ieltsapp.AdapterClass.Reading_ExamListAdapter;
 import rocketechit.ieltsapp.R;
 
 public class ReadingFragment extends Fragment {
@@ -26,10 +28,16 @@ public class ReadingFragment extends Fragment {
     String[] exam_status = {"Free", "$100", "Free", "$50", "Free",};
     String[] author_name = {"SRK", "SK", "SRK", "SK", "SRK"};
 
-    String title="MCQ Exam List";
+    String title = "MCQ Exam List";
 
     @BindView(R.id.recycler_View_ID_For_Reading)
     RecyclerView recyclerViewIDForReading;
+    @BindView(R.id.all_check)
+    CheckBox allCheck;
+    @BindView(R.id.free_check)
+    CheckBox freeCheck;
+    @BindView(R.id.paid_check)
+    CheckBox paidCheck;
 
 
     @Nullable
@@ -51,18 +59,18 @@ public class ReadingFragment extends Fragment {
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewIDForReading.setLayoutManager(linearLayoutManager);
 
-        ExamListAdapter examListAdapter = new ExamListAdapter(getActivity(), exam_name, exam_status,author_name);
-        recyclerViewIDForReading.setAdapter(examListAdapter);
+        Reading_ExamListAdapter readingExamListAdapter = new Reading_ExamListAdapter(getActivity(), exam_name, exam_status, author_name);
+        recyclerViewIDForReading.setAdapter(readingExamListAdapter);
 
-        examListAdapter.setOnItemClickListener(new ExamListAdapter.ClickListener() {
+        readingExamListAdapter.setOnItemClickListener(new Reading_ExamListAdapter.ClickListener() {
             @Override
-            public void onItemClick(int position, View v,String exam_status,String exam_name,String author) {
+            public void onItemClick(int position, View v, String exam_status, String exam_name, String author) {
 
-                Bundle bundle=new Bundle();
-                bundle.putString("exam_name",exam_name);
-                bundle.putString("exam_status",exam_status);
-                bundle.putString("exam_author",author);
-                bundle.putString("id","Reading");
+                Bundle bundle = new Bundle();
+                bundle.putString("exam_name", exam_name);
+                bundle.putString("exam_status", exam_status);
+                bundle.putString("exam_author", author);
+                bundle.putString("id", "Reading");
 
                 fragment = new Exam_item_details();
                 fragment.setArguments(bundle);
@@ -85,4 +93,26 @@ public class ReadingFragment extends Fragment {
 
     }
 
+    @OnClick({R.id.all_check, R.id.free_check, R.id.paid_check})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.all_check:
+
+                allCheck.setChecked(true);
+                freeCheck.setChecked(false);
+                paidCheck.setChecked(false);
+                break;
+            case R.id.free_check:
+                allCheck.setChecked(false);
+                freeCheck.setChecked(true);
+                paidCheck.setChecked(false);
+                break;
+            case R.id.paid_check:
+
+                allCheck.setChecked(false);
+                freeCheck.setChecked(false);
+                paidCheck.setChecked(true);
+                break;
+        }
+    }
 }

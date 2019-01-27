@@ -30,7 +30,7 @@ public class Login_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().setTitle("Login");
+        getSupportActionBar().setTitle("IELTS EXAM");
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
     }
