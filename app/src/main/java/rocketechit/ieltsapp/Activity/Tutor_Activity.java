@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import rocketechit.ieltsapp.Fragment.Exam_List_Tutor;
 import rocketechit.ieltsapp.Fragment.Tutor_Home_page;
+import rocketechit.ieltsapp.Fragment.Tutor_Profile;
 import rocketechit.ieltsapp.Fragment.Tutor_question_List;
 import rocketechit.ieltsapp.R;
 
@@ -107,7 +108,8 @@ public class Tutor_Activity extends AppCompatActivity
 
             fragment = new Tutor_question_List();
 
-        } else if (id == R.id.nav_Tutor_Request) {
+        } else if (id == R.id.nav_Tutor_profile) {
+            fragment=new Tutor_Profile();
 
         } else if (id == R.id.nav_Speaking) {
 

@@ -1,6 +1,5 @@
 package rocketechit.ieltsapp.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -48,7 +47,6 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(new Intent(MainActivity.this, Free_Exam_Activity.class)));
             }
         });
 

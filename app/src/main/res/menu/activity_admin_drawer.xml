@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Add Tutor" />
         <item
-            android:id="@+id/nav_Tutor_Request"
+            android:id="@+id/nav_Tutor_profile"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Question Request" />
         <item

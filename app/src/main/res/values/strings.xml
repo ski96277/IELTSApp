@@ -23,4 +23,12 @@
     <string name="fullNameHint">Full Name</string>
     <string name="title_activity_tutor_">Tutor_Activity</string>
     <string name="title_activity_admin_">Admin_Activity</string>
+    
+    
+    <string-array name="spinner_array">
+        <item>Imran Sk</item>
+        <item>Imran Sk2</item>
+        <item>Imran Sk3</item>
+        <item>Imran Sk4</item>
+    </string-array>
 </resources>

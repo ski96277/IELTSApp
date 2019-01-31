@@ -13,17 +13,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rocketechit.ieltsapp.Activity.MainActivity;
 import rocketechit.ieltsapp.AdapterClass.Payment_ExamListAdapter;
 import rocketechit.ieltsapp.AdapterClass.WrittenExamListAdapter;
 import rocketechit.ieltsapp.R;
 
 public class My_Purchase_Exam extends Fragment {
 
-
     String[] exam_name = {"Written Demo Exam-1", "Written Demo Exam-2", "Written Demo Exam-3", "Written Demo Exam-4", "Written Demo Exam-5"};
     String[] exam_status = {"Free", "$100", "Free", "$50", "Free",};
 
     String[] author_name = {"SRK", "SK", "SRK", "SK", "SRK"};
+
+    String title="Purchase Exam";
 
     @BindView(R.id.recycler_View_my_purchase)
     RecyclerView recyclerViewMyPurchase;
@@ -32,6 +34,7 @@ public class My_Purchase_Exam extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)getActivity()).setToolbarTitle(title);
         View view = inflater.inflate(R.layout.my_purchase_exam, null);
         ButterKnife.bind(this, view);
         return view;

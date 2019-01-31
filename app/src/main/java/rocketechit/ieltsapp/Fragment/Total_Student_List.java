@@ -28,9 +28,12 @@ public class Total_Student_List extends Fragment {
     Fragment fragment=null;
     Bundle bundle;
 
+    String title="Student List";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((Admin_Activity)getActivity()).settoolbarTitle(title);
         View view = inflater.inflate(R.layout.total_student_list, null);
         ButterKnife.bind(this, view);
         return view;

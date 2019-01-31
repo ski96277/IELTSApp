@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "477219536523",
+    "firebase_url": "https://ielts-app-bddff.firebaseio.com",
+    "project_id": "ielts-app-bddff",
+    "storage_bucket": "ielts-app-bddff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477219536523:android:5c6d198307aae61f",
+        "android_client_info": {
+          "package_name": "rocketechit.ieltsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477219536523-nas6qhvd52j23p78go753bklq3nj9jtg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcXZVKkIogiJWc5VofczD1dzXiCey28Nc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

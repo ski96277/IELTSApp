@@ -42,10 +42,9 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/circle"
                         android:padding="10dp"
-                        android:src="@drawable/img_authentication"
-                        android:tint="@color/white" />
+                        android:src="@drawable/tutor_list"
+                       />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -228,7 +227,7 @@
                         android:layout_height="50dp"
                         android:background="@color/googleRed"
                         android:padding="10dp"
-                        android:src="@drawable/img_googleplus" />
+                        android:src="@drawable/gmail_icon" />
 
                 </LinearLayout>
 

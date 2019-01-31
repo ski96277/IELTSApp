@@ -129,7 +129,7 @@ public class Admin_Activity extends AppCompatActivity
 
             fragment = null;
             fragment = new Add_Tutor();
-        } else if (id == R.id.nav_Tutor_Request) {
+        } else if (id == R.id.nav_Tutor_profile) {
 
             fragment = null;
             fragment = new Tutor_question_Request();
